@@ -8,13 +8,18 @@
   color: white;
   font-size: 50px;
 }
+.panel {
+  color:#fff;
+  background-color:#f44336;
+  align-self: auto;
+  align-content : center;
+}
 
 .App-footer {
   text-align: center;
   background-color: #444;
-  padding: 20px;
+  padding: 25px;
   color: white;
-  margin-top : 20px;
 }
 
 .App-intro {

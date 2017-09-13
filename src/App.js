@@ -8,6 +8,22 @@ const styles = {
         "height": "30px",
         "marginTop" : "15px",
         "fontSize" : "30px"
+    },
+
+    message : {
+        "width" : "400px",
+        "height": "100px",
+        "marginTop" : "15px",
+        "fontSize" : "20px"
+    },
+
+    button : {
+        "width" : "400px",
+        "height": "40px",
+        "fontSize" : "30px",
+        "color" : "white",
+        "background" : "blue",
+        "marginBottom" : "20px"
     }
 };
 
@@ -18,7 +34,9 @@ class App extends Component {
         this.state = {
             senderEmail : null,
             senderPassword : null,
-            receiverEmail : null
+            receiverEmail : null,
+            plainMessage : null,
+            secretMessage : null
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -29,7 +47,7 @@ class App extends Component {
         change[event.target.name] = event.target.value;
         this.setState(change);
     }
-    
+
     render() {
         return (
             <div>
@@ -40,13 +58,31 @@ class App extends Component {
                     </div>
                 </div>
                 <div className="App">
-                    <input placeholder="Your eMail" type = "email" name = "senderEmail" value = {this.state.senderEmail} onChange={this.handleChange.bind(this)} style = {styles.input}/>
-                    <br/>
-                    <input placeholder="Your Password" type = "password" name = "senderPassword" value = {this.state.senderPassword} onChange={this.handleChange.bind(this)} style = {styles.input}/>
-                    <br/>
-                    <input placeholder="Receiver's eMail"type = "email" name = "receiverEmail" value = {this.state.receiverEmail} onChange={this.handleChange.bind(this)} style = {styles.input}/>
-                    <hr/>
-                    <br/>
+                    <div className="panel">
+                        <input placeholder="Your eMail" type = "email" name = "senderEmail" value = {this.state.senderEmail} onChange={this.handleChange.bind(this)} style = {styles.input}/>
+                        <br/>
+                        <input placeholder="Your Password" type = "password" name = "senderPassword" value = {this.state.senderPassword} onChange={this.handleChange.bind(this)} style = {styles.input}/>
+                        <br/>
+                        <input placeholder="Receiver's eMail" type = "email" name = "receiverEmail" value = {this.state.receiverEmail} onChange={this.handleChange.bind(this)} style = {styles.input}/>
+                        <hr/>
+
+                        <textarea placeholder="Enter Normal/Plain Message" type = "textbox" name = "plainMessage" value = {this.state.plainMessage} onChange={this.handleChange.bind(this)} style = {styles.message}/>
+                        <br/>
+                        <textarea placeholder="Enter Secret Message" type = "textbox" name = "secretMessage" value = {this.state.secretMessage} onChange={this.handleChange.bind(this)} style = {styles.message}/>
+                        <hr/>
+
+                        KEY / AudioFile
+                        <br/>
+                        <input type = "file" name = "upload" style = {styles.input}/>
+                        <hr/>
+
+                        <input type = "button" style = {styles.button} value = "Send Key"/>
+                        <br/>
+                        <input type = "button" style = {styles.button} value = "Send Message"/>
+                        <br/>
+                        <input type = "button" style = {styles.button} value = "Decrypt"/>
+                        <br/>
+                    </div>
                 </div>
                 < div className="App-footer">
                     Website developed by HMS Pvt. Ltd. (CSE - 18)
