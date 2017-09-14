@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  align-content : center;
+  min-width : 430px;
 }
 
 .App-header {
@@ -7,12 +9,23 @@
   padding: 20px;
   color: white;
   font-size: 50px;
+  min-width : 380px;
 }
+
+.Body {
+  background-color: #666;
+  align-content: center;
+  min-width : 430px;
+  font-family: "Source Code Pro";
+}
+
 .panel {
-  color:#fff;
-  background-color:#f44336;
-  align-self: auto;
-  align-content : center;
+  background-color:#333;
+  height : auto;
+  width: 50%;
+  min-width : 380px;
+  margin: 0 auto;
+  color : lime;
 }
 
 .App-footer {
@@ -20,6 +33,7 @@
   background-color: #444;
   padding: 25px;
   color: white;
+  min-width : 380px;
 }
 
 .App-intro {
