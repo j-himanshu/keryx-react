@@ -1,3 +1,3 @@
 export function getUrl(){
-    return "http://localhost:5001/";
+    return "http://www.keryx.com:5001/";
 }
