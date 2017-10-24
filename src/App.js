@@ -100,14 +100,13 @@ class App extends Component {
     }
 
     handleUploadInformationFile(event) {
-        if (event.target.files[0].type === 'image/jpeg'
-            || event.target.files[0].type === 'image/jpg') {
+        if (event.target.files[0].type === 'image/png') {
             (this.state.fileInformation).append('file', event.target.files[0]);
             (this.state.fileInformation).append('name', 'uploadInformation');
             this.setState({fileTypeInformation: event.target.files[0].type});
         }
         else
-            alert("Select only JPG file!");
+            alert("Select only PNG file!");
 
     }
 
@@ -130,8 +129,8 @@ class App extends Component {
     }
 
     getAudio() {
-        if (this.state.fileTypeInformation !== "image/jpeg" && this.state.fileTypeInformation !== "image/jpg")
-            alert("Please upload 'Information Image (jpg)' file");
+        if (this.state.fileTypeInformation !== "image/png")
+            alert("Please upload 'Information Image (png)' file");
         else if (this.state.fileTypePublicKey.length !== 0)
             alert("Please upload Public Key file");
         else {
@@ -184,7 +183,7 @@ class App extends Component {
                             <input type="button" style={styles.button1} value="🔑 Generate Key 🔒"/>
                         </a>
                         <br/><hr/>
-                        Information Image (JPG File)
+                        Information Image (PNG File)
                         <br/>
                         <input type="file" name="uploadInformation" onChange={this.handleUploadInformationFile} style={styles.input}/>
                         <br/>
