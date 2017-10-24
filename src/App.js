@@ -207,6 +207,7 @@ class App extends Component {
                                onClick={() => this.decryptMessage()}/>
                         <br/>
                         <hr/>
+
                     </div>
                 </div>
                 < div className="App-footer">
