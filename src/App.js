@@ -143,7 +143,6 @@ class App extends Component {
             axios.post(contentUrl, this.state.fileInformation).then((response) => {
                 alert(response.data);
             });
-            alert("Download the audio from the following URL: " + this.url + "keryx/downloadAudio");
         }
     }
 
@@ -163,7 +162,6 @@ class App extends Component {
             axios.post(audioUrl, this.state.fileAudio).then((response) => {
                 alert(response.data);
             });
-            alert("Download the Image from the following URL: " + this.url + "keryx/downloadImage");
         }
     }
 
@@ -179,36 +177,52 @@ class App extends Component {
                 <div className="App">
                     <div className="panel">
                         <hr/>
-                        <a href={this.url+"keryx/downloadKey"}>
+                        <a href={this.url + "keryx/downloadKey"}>
                             <input type="button" style={styles.button1} value="🔑 Generate Key 🔒"/>
                         </a>
-                        <br/><hr/>
+                        <br/>
+                        <hr/>
                         Information Image (PNG File)
                         <br/>
-                        <input type="file" name="uploadInformation" onChange={this.handleUploadInformationFile} style={styles.input}/>
+                        <input type="file" name="uploadInformation" onChange={this.handleUploadInformationFile}
+                               style={styles.input}/>
                         <br/>
                         Public Key
                         <br/>
-                        <input type="file" name="uploadPublicKey" onChange={this.handleUploadPublicKeyFile} style={styles.input}/>
+                        <input type="file" name="uploadPublicKey" onChange={this.handleUploadPublicKeyFile}
+                               style={styles.input}/>
                         <br/>
-                        <input type="button" style={styles.button2} value="🔊 Download Audio "
+                        <input type="button" style={styles.button2} value="⇪ Upload Files"
                                onClick={() => this.getAudio()}/>
+                        <br/>
+                        <a href = {this.url + "keryx/generateAudio"}>
+                            <input type="button" style={styles.button2} value="🔒 Encrypt & Download Audio 🔊"/>
+                        </a>
                         <br/>
                         <hr/>
                         Audio Wave (WAV File)
                         <br/>
-                        <input type="file" name="uploadAudio" onChange={this.handleUploadAudioFile} style={styles.input}/>
+                        <input type="file" name="uploadAudio" onChange={this.handleUploadAudioFile}
+                               style={styles.input}/>
                         <br/>
                         Private Key
                         <br/>
-                        <input type="file" name="uploadPrivateKey" onChange={this.handleUploadPrivateKeyFile} style={styles.input}/>
+                        <input type="file" name="uploadPrivateKey" onChange={this.handleUploadPrivateKeyFile}
+                               style={styles.input}/>
                         <br/>
-                        <input type="button" style={styles.button3} value="🔓 Decrypt"
+
+                        <input type="button" style={styles.button3} value="⇪ Upload Files"
                                onClick={() => this.decryptMessage()}/>
+                        <br/>
+                        <a href={this.url + "keryx/generateImage"}>
+                            <input type="button" style={styles.button3} value="🔓 Decrypt & Download Image 🖼"/>
+                        </a>
                         <br/>
                         <hr/>
 
                     </div>
+                    <a href={this.url + "keryx/cleanup"}>Cleanup </a>
+                    <a href={this.url + "keryx/viewLogs"}>View Logs</a>
                 </div>
                 < div className="App-footer">
                     Website developed by HMS Pvt. Ltd. (CSE - 18)
